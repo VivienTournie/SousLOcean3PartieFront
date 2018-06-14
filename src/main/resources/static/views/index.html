@@ -8,13 +8,45 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Miage Plongee</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-    <body ng-app = "app">
-        <div>TODO write content blabla marine et anais</div>
-        
+    <body ng-app = "app" id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Miage Plongée</a>
+              </div>
+              <ul class="nav navbar-nav">
+                  <li> 
+                      <a href="#">Login</a>
+                  </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Membres<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Liste des membres</a></li>
+                      <li><a href="#">Gerer mon profil</a></li>
+                      <li><a href="#">Payer cotisation</a></li>
+                    </ul>
+              </li>
+              <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cours<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Créer un cours</a></li>
+                      <li><a href="#">Consulter les cours</a></li>
+                    </ul>
+              </li>
+                <li><a href="#">Statistiques</a></li>
+              </ul>
+            </div>
+    </nav>
+    
     <div ng-view></div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
@@ -24,3 +56,4 @@ and open the template in the editor.
         <script src="../js/listeMembresController.js"></script>
     </body>
 </html>
+
