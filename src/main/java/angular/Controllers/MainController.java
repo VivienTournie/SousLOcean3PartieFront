@@ -6,6 +6,7 @@
 package angular.Controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Vivie
  */
 @Controller
+@CrossOrigin(origins = "http://localhost:8082")
 public class MainController {
     
     @RequestMapping("/")

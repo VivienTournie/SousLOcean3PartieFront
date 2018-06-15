@@ -11,6 +11,14 @@ app.config(function($routeProvider){
             templateUrl: 'views/listeMembres.html',
             controller: 'listeMembresController'
         })
+        .when('/statistiques',{
+            templateUrl: 'views/statistiques.html',
+            controller: 'statistiquesController'
+        })
+        .when('/piscines',{
+            templateUrl: 'views/piscines.html',
+            controller: 'piscinesController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );
