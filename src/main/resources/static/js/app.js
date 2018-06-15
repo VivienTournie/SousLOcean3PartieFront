@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var app = angular.module('app', ['ngRoute','ngResource']);
+var app = angular.module('app', ['ngRoute','ngResource','ngCookies']);
 
 app.config(function($routeProvider){
     $routeProvider
@@ -22,6 +22,10 @@ app.config(function($routeProvider){
         .when('/login',{
             templateUrl: 'views/Inscription.html',
             controller: 'InscriptionController'
+        })
+        .when('/connexion',{
+            templateUrl: 'views/connexion.html',
+            controller: 'connexionController'
         })
         .otherwise(
             { redirectTo: '/'}
