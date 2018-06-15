@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Piscines</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
+    </head>
+    <body ng-app = "app">
+        <div>Liste des piscines</div>
+        <br/>
+       
+            <h3 class="panel-title">Connectez-vous !</h3>
+	
+	
+		<form accept-charset="UTF-8" role="form">
+                    <fieldset>
+			    	  	
+			    		    <input  ng-model="login" name="login" type="text">  <br/><br/>
+			    		 <input  ng-model="password" name="password" type="text">  <br/><br/>
+			    		<input  type="submit" value="Se connecter !" ng-click="entrez()">
+			    	</fieldset>
+			      	</form>
+      Bonjour {{membre.prenom}} ! 
+      
+      <a href="/#!/login">S'inscrire</a>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/connexionController.js"></script>
+    </body>
+</html>
