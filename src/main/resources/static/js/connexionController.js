@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("connexionController", function($scope,$http,$cookies) {
+app.controller("connexionController", function($scope,$http,$cookies,$location) {
+    
+ if ($cookies.get("id")!=undefined){
+     $location.path("/deconnexion");
+ }
  $scope.entrez = function ()
-                    {
+                    {console.log("connexion");
                         var dataSend ={
                             login : $scope.login,
                             password : $scope.password
@@ -28,7 +32,7 @@ app.controller("connexionController", function($scope,$http,$cookies) {
                                     console.log($cookies.get("type"));
                                 });
                         });
-                        
+                        $location.path("/piscines");
                     }
 
 });

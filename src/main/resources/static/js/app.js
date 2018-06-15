@@ -27,6 +27,14 @@ app.config(function($routeProvider){
             templateUrl: 'views/connexion.html',
             controller: 'connexionController'
         })
+        .when('/inscription',{
+            templateUrl: 'views/Inscription.html',
+            controller: 'inscriptionController'
+        })
+        .when('/deconnexion',{
+            templateUrl: 'views/deconnexion.html',
+            controller: 'deconnexionController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );

@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("listeMembresController", function($scope, $http) {
+app.controller("listeMembresController", function($scope, $http,$window,$cookies) {
+    
+if ($cookies.get("type")!="Secretaire"){
+      $window.alert("Vous n'avez pas les droits :(")
+     $location.path("/piscines");
+ }
     $http.get("http://localhost:8080/api/membre/consultation")
     .then(function(response) {
         $scope.content = response.data;

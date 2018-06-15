@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("listeMembresController", function($scope, $http) {
+app.controller("inscriptionController", function($scope, $http) {
+if ($cookies.get("id")!=undefined){
+     $location.path("/deconnexion");
+ }
     $http.put("http://localhost:8080/api/membre/creation")
 //    .then(function(response) {
 //        $scope.content = response.data;
