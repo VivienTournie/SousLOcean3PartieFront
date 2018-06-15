@@ -22,8 +22,9 @@ and open the template in the editor.
                     <th>Mail</th>
                     <th>Niveau d'expertise</th>
                     <th>Numéro de licence</th>
+                    <th>Date paiement</th>
+                    <th>Ville</th>
                     <th>Pays</th>
-                    <th>Adresse</th>
                 </tr>
                 
                 <tr ng-repeat="m in content">
@@ -32,8 +33,9 @@ and open the template in the editor.
                     <td>{{m.adresseMail}}</td>
                     <td>{{m.niveauExpertise}}</td>
                     <td>{{m.numLicence}}</td>
-                    <td>{{m.aPaye}}</td>
-                    <td>{{m.adresse}}</td>
+                    <td>{{m.apaye}}</td>
+                    <td>{{m.adresse.ville}}</td>
+                    <td>{{m.adresse.pays}}</td>
                 </tr>
 
             </table>
