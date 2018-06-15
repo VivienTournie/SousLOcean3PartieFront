@@ -22,3 +22,5 @@ th, td {
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+* {cursor: url(http://cur.cursors-4u.net/toons/too-8/too747.ani), url(http://cur.cursors-4u.net/toons/too-8/too747.png), auto !important;}
