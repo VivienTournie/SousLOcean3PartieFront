@@ -21,12 +21,14 @@ and open the template in the editor.
 		<form accept-charset="UTF-8" role="form">
                     <fieldset>
 			    	  	
-			    		    <input  ng-model="login" name="login" type="text">  <br/>
-			    		 <input  ng-model="password" name="password" type="text">  <br/>
+			    		    <input  ng-model="login" name="login" type="text">  <br/><br/>
+			    		 <input  ng-model="password" name="password" type="text">  <br/><br/>
 			    		<input  type="submit" value="Se connecter !" ng-click="entrez()">
 			    	</fieldset>
 			      	</form>
-      {{membre}}
+      Bonjour {{membre.prenom}} ! 
+      
+      <a href="/#!/login">S'inscrire</a>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
