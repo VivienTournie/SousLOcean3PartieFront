@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-app.controller("listeMembresController", function() {
-    
+app.controller("listeMembresController", function($scope, $http) {
+    $http.get("http://localhost:8080/api/membre/consultation")
+    .then(function(response) {
+        $scope.content = response.data;
+        $scope.statuscode = response.status;
+        $scope.statustext = response.statusText; 
+    });
 });
