@@ -19,6 +19,10 @@ app.config(function($routeProvider){
             templateUrl: 'views/piscines.html',
             controller: 'piscinesController'
         })
+        .when('/login',{
+            templateUrl: 'views/Inscription.html',
+            controller: 'InscriptionController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );
