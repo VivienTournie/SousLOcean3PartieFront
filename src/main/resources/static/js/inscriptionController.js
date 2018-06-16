@@ -14,17 +14,17 @@ if ($cookies.get("id")!=undefined){
                         var dataSend ={
                             nom : $scope.nom,
                             prenom : $scope.prenom,
-                            mail : $scope.mail,
+                            adresseMail : $scope.mail,
                             login : $scope.login,
                             password : $scope.password,
-                            dateCertificat : $scope.dateCertificat,
-                            cotisationPayee : $scope.cotisationPayee,
-                            niveau : $scope.niveau,
+                            dateDebutCertificat : $scope.dateCertificat,
+                            aPaye : $scope.cotisationPayee,
+                            niveauExpertise : ""+$scope.niveau,
                             numLicence : $scope.numLicence,
                             pays : $scope.pays,
                             ville : $scope.ville,
                             type : $scope.type
-                        }
+                        } ;console.log(dataSend);
                         $http.post("http://localhost:8080/api/membre/creation",dataSend)
                         .success(function(dataSend) {
                             $scope.PostDataResponse = dataSend;
