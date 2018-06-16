@@ -35,6 +35,10 @@ app.config(function($routeProvider){
             templateUrl: 'views/deconnexion.html',
             controller: 'deconnexionController'
         })
+        .when('/consultation',{
+            templateUrl: 'views/consultation.html',
+            controller: 'consultationController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );
