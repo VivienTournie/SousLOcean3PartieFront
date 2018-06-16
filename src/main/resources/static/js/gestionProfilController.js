@@ -12,14 +12,29 @@ app.controller("gestionProfilController", function($scope,$http,$window,$cookies
 		
     });
     
-    /*$scope.modifier = function(){
+    $scope.modifier = function(){
         console.log("MODIF");
-        $http.get("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
+        
+        var dataSend ={
+                            nom : $scope.membre.nom,
+                            prenom : $scope.membre.prenom,
+                            adresseMail : $scope.membre.adresseMail,
+                            login : $scope.membre.login,
+                            password : $scope.membre.password,
+                            dateDebutCertificat : ""+$scope.membre.dateDebutCertificat,
+                            aPaye : ""+$scope.membre.apaye,
+                            niveauExpertise : ""+$scope.membre.niveauExpertise,
+                            numLicence : $scope.membre.numLicence,
+                            pays : $scope.membre.adresse.pays,
+                            ville : $scope.membre.adresse.ville,
+                           
+                        }
+        $http.put("http://localhost:8080/api/membre/modification/"+$cookies.get("id"),dataSend)
         .then(function(response) {
             $scope.membre = response.data;
 		
         });
-    }*/
+    }
     
     /*$scope.modifier = function ()
                     {console.log("Modification");
