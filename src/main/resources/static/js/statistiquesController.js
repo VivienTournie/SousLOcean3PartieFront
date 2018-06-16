@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-app.controller("statistiquesController", function($scope,$http,$window,$cookies) {
+app.controller("statistiquesController", function($scope,$http,$window,$cookies,$location) {
 if ($cookies.get("type")!="President"){
       $window.alert("Vous n'avez pas les droits :(")
      $location.path("/piscines");
