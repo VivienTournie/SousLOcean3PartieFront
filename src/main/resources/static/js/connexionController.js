@@ -14,7 +14,7 @@ app.controller("connexionController", function($scope,$http,$cookies,$location) 
                             login : $scope.login,
                             password : $scope.password
                         }
-                        $http.put("http://localhost:8080/api/membre/connexion",dataSend)
+                        $http.get("http://localhost:8080/api/membre/connexion",dataSend)
                         .then(function(response) {
                             $cookies.put("id",response.data.idMembre);
                             $http({
