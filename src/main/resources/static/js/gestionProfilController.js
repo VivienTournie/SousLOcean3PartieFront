@@ -12,6 +12,15 @@ app.controller("gestionProfilController", function($scope,$http,$window,$cookies
 		
     });
     
+    /*$scope.modifier = function(){
+        console.log("MODIF");
+        $http.get("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
+        .then(function(response) {
+            $scope.membre = response.data;
+		
+        });
+    }*/
+    
     /*$scope.modifier = function ()
                     {console.log("Modification");
                         
