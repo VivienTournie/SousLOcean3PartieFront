@@ -26,10 +26,10 @@ if ($cookies.get("id")!=undefined){
                             type : $scope.type
                         } ;console.log(dataSend);
                         $http.post("http://localhost:8080/api/membre/creation",dataSend)
-                        .success(function(dataSend) {
+                        .then(function(dataSend) {
                             $scope.PostDataResponse = dataSend;
-                        })
-                        .error(function (dataSend) {
+                        },
+                        function (dataSend) {
                             $scope.ResponseDetails = "Data: " + dataSend
                         });
                         
