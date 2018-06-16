@@ -16,19 +16,18 @@ app.controller("gestionProfilController", function($scope,$http,$window,$cookies
         console.log("MODIF");
         
         var dataSend ={
-                            nom : $scope.membre.nom,
-                            prenom : $scope.membre.prenom,
-                            adresseMail : $scope.membre.adresseMail,
-                            login : $scope.membre.login,
-                            password : $scope.membre.password,
-                            dateDebutCertificat : ""+$scope.membre.dateDebutCertificat,
-                            aPaye : ""+$scope.membre.apaye,
+                            nom : $scope.nom,
+                            prenom : $scope.prenom,
+                            adresseMail : $scope.adresseMail,
+                            login : $scope.login,
+                            password : $scope.password,
                             niveauExpertise : ""+$scope.membre.niveauExpertise,
                             numLicence : $scope.membre.numLicence,
-                            pays : $scope.membre.adresse.pays,
-                            ville : $scope.membre.adresse.ville,
+                            pays : $scope.pays,
+                            ville : $scope.ville,
                            
                         }
+                        console.log(dataSend);
         $http.put("http://localhost:8080/api/membre/modification/"+$cookies.get("id"),dataSend)
         .then(function(response) {
             $scope.membre = response.data;
