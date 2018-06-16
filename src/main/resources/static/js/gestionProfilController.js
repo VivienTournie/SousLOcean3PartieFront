@@ -6,10 +6,33 @@
 
 app.controller("gestionProfilController", function($scope,$http,$window,$cookies) {
 
-    $http.get("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
+    /*$http.get("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
     .then(function(response) {
         $scope.membre = response.data;
 		
-    });
+    });*/
+    
+     $scope.modifier = function ()
+                    {console.log("Modification");
+                        
+                        $http.put("http://localhost:8081/api/cours/afficher/"+$cookies.get("id"))
+                        .then(function(response) {
+                            $cookies.put("id",response.data.idMembre);
+                            $http({
+                                    url: "http://localhost:8080/api/membre/modification/"+response.data.idMembre,
+                                    method: 'PUT',
+                                    responseType: 'text',
+                                    transformResponse: [function (data) {
+                                        // Do whatever you want!
+                                        return data;
+                                     }]
+                                }).then(function(res){
+                                     
+                                     $scope.membre = res.data;
+                                    console.log($cookies.get("id"));
+                                });
+                        });
+                        $location.path("/piscines");
+                    }
     
 });
