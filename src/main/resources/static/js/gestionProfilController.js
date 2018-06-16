@@ -6,7 +6,7 @@
 
 app.controller("gestionProfilController", function($scope,$http,$window,$cookies,$location) {
 
-    $http.put("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
+    $http.get("http://localhost:8080/api/membre/afficher/"+$cookies.get("id"))
     .then(function(response) {
         $scope.membre = response.data;
 		
