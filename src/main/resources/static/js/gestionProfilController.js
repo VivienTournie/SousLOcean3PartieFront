@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 
-app.controller("gestionProfilController", function($scope,$http,$window,$cookies) {
+app.controller("gestionProfilController", function($scope,$http,$window,$cookies,$location) {
 
-    /*$http.get("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
+    $http.put("http://localhost:8080/api/membre/modification/"+$cookies.get("id"))
     .then(function(response) {
         $scope.membre = response.data;
 		
-    });*/
+    });
     
-     $scope.modifier = function ()
+    /*$scope.modifier = function ()
                     {console.log("Modification");
                         
-                        $http.put("http://localhost:8081/api/cours/afficher/"+$cookies.get("id"))
+                        $http.put("http://localhost:8080/api/membre/afficher/"+$cookies.get("id"))
                         .then(function(response) {
                             $cookies.put("id",response.data.idMembre);
                             $http({
@@ -33,6 +33,6 @@ app.controller("gestionProfilController", function($scope,$http,$window,$cookies
                                 });
                         });
                         $location.path("/piscines");
-                    }
+                    }*/
     
 });
