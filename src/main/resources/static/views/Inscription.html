@@ -11,24 +11,26 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/css.css">
     </head>
-    <body>
-        <body ng-app = "app">
+    <body ng-app = "app">
         <div>S'inscrire au groupe de plongée :</div>
         <br/>
-        <form action="/ma-page-de-traitement" method="post">
-    <div>
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="user_name">
-    </div>
-    <div>
-        <label for="mail">e-mail :</label>
-        <input type="email" id="mail" name="user_mail">
-    </div>
-    <div>
-        <label for="msg">Message :</label>
-        <textarea id="msg" name="user_message"></textarea>
-    </div>
-</form>
+        <form accept-charset="UTF-8" role="form">
+                    <fieldset>
+                         Nom : <input  ng-model="nom" name="nom" type="text">  <br/><br/>
+                         Prénom : <input  ng-model="prenom" name="prenom" type="text">  <br/><br/>
+                         Mail : <input  ng-model="mail" name="mail" type="text">  <br/><br/>
+                         Login : <input  ng-model="login" name="login" type="text">  <br/><br/>
+                         Password : <input  ng-model="password" name="password" type="password">  <br/><br/>
+                         Date certificat :<input  ng-model="dateCertificat" name="dateCertificat" type="text">  <br/><br/>
+                         Cotisation réglée (1 = Oui / 0 = Non) : <input  ng-model="cotisationPayee" name="cotisationPayee" type="text">  <br/><br/>
+                         Niveau d'expertise : <input  ng-model="niveau" name="niveau" type="text">  <br/><br/>
+                         Numéro licence : <input  ng-model="numLicence" name="numLicence" type="text">  <br/><br/>
+                         Pays : <input  ng-model="Pays" name="Pays" type="text">  <br/><br/> 
+                         Ville : <input  ng-model="Ville" name="Ville" type="text">  <br/><br/>
+                         Type membre (Membre/President/Secretaire/Enseignant):<input  ng-model="Type" name="Type" type="text">  <br/><br/> 
+                        <input  type="submit" value="S'inscrire" ng-click="inscription()">
+                    </fieldset>
+        </form>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>

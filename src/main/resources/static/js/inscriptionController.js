@@ -3,14 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("inscriptionController", function($scope, $http) {
+app.controller("inscriptionController", function($scope, $http, $cookies, $location) {
 if ($cookies.get("id")!=undefined){
      $location.path("/deconnexion");
  }
-    $http.put("http://localhost:8080/api/membre/creation")
-//    .then(function(response) {
-//        $scope.content = response.data;
-//        $scope.statuscode = response.status;
-//        $scope.statustext = response.statusText; 
-//    }); A ADAPTER POUR CREER UN MEMBRE
+
+ $scope.inscription = function ()
+                    {
+                        console.log("inscription");
+                        var dataSend ={
+                            nom : $scope.nom,
+                            prenom : $scope.prenom,
+                            mail : $scope.mail,
+                            login : $scope.login,
+                            password : $scope.password,
+                            dateCertificat : $scope.dateCertificat,
+                            cotisationPayee : $scope.cotisationPayee,
+                            niveau : $scope.niveau,
+                            numLicence : $scope.numLicence,
+                            pays : $scope.pays,
+                            ville : $scope.ville,
+                            type : $scope.type
+                        }
+                        $http.post("http://localhost:8080/api/membre/creation",dataSend)
+                        .success(function(dataSend) {
+                            $scope.PostDataResponse = dataSend;
+                        })
+                        .error(function (dataSend) {
+                            $scope.ResponseDetails = "Data: " + dataSend
+                        });
+                        
+                        $location.path("/piscines");
+                    }
+
 });
