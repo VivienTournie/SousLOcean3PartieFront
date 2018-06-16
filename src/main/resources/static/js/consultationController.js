@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("consultationController", function($scope,$http,$window,$cookies,$location) {
+app.controller("consultationController", function($scope,$http,$window,$cookies) {
 
     $http.get("http://localhost:8081/api/cours/afficher/"+$cookies.get("id"))
     .then(function(response) {

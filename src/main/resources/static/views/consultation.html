@@ -9,9 +9,34 @@ and open the template in the editor.
         <title>Consultation des cours d'un membre</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
     </head>
-    <body>
+    <body ng-app="app">
         <div>Consultation des cours d'un membre</div>
+        <div>
+            <table>
+                <tr>
+                    <th>Nom du cours</th>
+                    <th>Niveau cible</th>
+                    <th>Date début</th>
+                    <th>Durée</th>
+                    <th>Enseignant</th>
+                    <th>Lieu</th>
+                    <th>Participants</th>
+                </tr>
+                
+                <tr ng-repeat="c in membre">
+                    <td>{{c.nomCours}}</td>
+                    <td>{{c.niveauCible}}</td>
+                    <td>{{c.creneau.dateDebut}}</td>
+                    <td>{{c.creneau.duree}}</td>
+                    <td>{{c.enseignant}}</td>
+                    <td>{{c.piscine}}</td>
+                    <td>{{c.participants}}</td>
+                </tr>
+
+            </table>
+        </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
