@@ -39,6 +39,10 @@ app.config(function($routeProvider){
             templateUrl: 'views/consultation.html',
             controller: 'consultationController'
         })
+        .when('/gestionProfil',{
+            templateUrl: 'views/gestionProfil.html',
+            controller: 'gestionProfilController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );
