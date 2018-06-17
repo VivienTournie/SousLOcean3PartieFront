@@ -4,4 +4,34 @@
  * and open the template in the editor.
  */
 
-
+app.controller("participerCoursController", function($scope, $http,$window,$cookies,$location) {
+    
+if ($cookies.get("type")!="Membre"){
+      $window.alert("Vous n'avez pas les droits :(")
+     $location.path("/piscines");
+ }
+ $http.get("http://localhost:8081/api/cours/afficherCours")
+    .then(function(response) {
+        $scope.cours = response.data;
+        $scope.statuscode = response.status;
+        $scope.statustext = response.statusText; 
+    });
+ 
+    $scope.participer = function ()
+                    {
+                        console.log("participer cours");
+                        var dataSend ={
+                            idCours : $scope.idCours,
+                        };
+                        console.log(dataSend);
+                        $http.post("http://localhost:8081/api/cours/participation/"+$cookies.get("id"),dataSend)
+                        .then(function(dataSend) {
+                            $scope.PostDataResponse = dataSend;
+                        },
+                        function (dataSend) {
+                            $scope.ResponseDetails = "Data: " + dataSend;
+                        });
+                        
+                        $location.path("/piscines");
+                    };
+ });    

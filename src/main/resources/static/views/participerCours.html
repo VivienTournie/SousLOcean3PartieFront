@@ -13,6 +13,31 @@ and open the template in the editor.
     </head>
     <body ng-app="app">
         <div>Participation à un cours</div>
+        <div>
+            <table>
+                <tr>
+                    <th>Identifiant du cours</th>
+                    <th>Nom</th>
+                    <th>Niveau</th>
+                    <th>Date début</th>
+                    <th>Durée</th>
+                </tr>
+                
+                <tr ng-repeat="c in cours">
+                    <td>{{c.id}}</td>
+                    <td>{{c.nomCours}}</td>
+                    <td>{{c.niveauCible}}</td>
+                    <td>{{c.creneau.dateDebut}}</td>
+                    <td>{{c.creneau.duree}}</td>
+                </tr>
+
+            </table>
+        </div>
+        <div>
+            <label for="idCours">Identifiant cours :</label>
+            <input  ng-model="idCours">
+            <button ng-click="participer()">Participer au cours</button>
+        </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
