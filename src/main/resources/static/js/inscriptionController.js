@@ -18,7 +18,6 @@ if ($cookies.get("id")!=undefined){
                             login : $scope.login,
                             password : $scope.password,
                             dateDebutCertificat : $scope.dateCertificat,
-                            aPaye : $scope.cotisationPayee,
                             niveauExpertise : ""+$scope.niveau,
                             numLicence : $scope.numLicence,
                             pays : $scope.pays,
@@ -30,10 +29,10 @@ if ($cookies.get("id")!=undefined){
                             $scope.PostDataResponse = dataSend;
                         },
                         function (dataSend) {
-                            $scope.ResponseDetails = "Data: " + dataSend
+                            $scope.ResponseDetails = "Data: " + dataSend;
                         });
                         
                         $location.path("/piscines");
-                    }
+                    };
 
 });
