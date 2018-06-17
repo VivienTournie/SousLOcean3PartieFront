@@ -3,32 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("creationCoursController", function($scope, $http,$window,$cookies,$location) {
+
+app.controller("participerCoursController", function($scope, $http,$window,$cookies,$location) {
     
-if ($cookies.get("type")!="Enseignant"){
+if ($cookies.get("type")!="Membre"){
       $window.alert("Vous n'avez pas les droits :(")
      $location.path("/piscines");
  }
- $http.get("http://localhost:8081/api/cours/afficherPiscines")
+ $http.get("http://localhost:8081/api/cours/afficherCours")
     .then(function(response) {
-        $scope.piscine = response.data;
+        $scope.cours = response.data;
         $scope.statuscode = response.status;
         $scope.statustext = response.statusText; 
     });
-    
-     $scope.creation = function ()
+ 
+    $scope.participer = function ()
                     {
-                        console.log("création cours");
+                        console.log("participer cours");
                         var dataSend ={
-                            nomCours : $scope.nomCours,
-                            niveauCible : $scope.niveauCible,
-                            dateDebut : $scope.dateDebut,
-                            duree : $scope.duree,
-                            enseignant : $scope.enseignant,
-                            piscine : $scope.id,
+                            idCours : $scope.idCours,
                         };
                         console.log(dataSend);
-                        $http.post("http://localhost:8081/api/cours/creation",dataSend)
+                        $http.post("http://localhost:8081/api/cours/participation/"+$cookies.get("id"),dataSend)
                         .then(function(dataSend) {
                             $scope.PostDataResponse = dataSend;
                         },
@@ -38,6 +34,4 @@ if ($cookies.get("type")!="Enseignant"){
                         
                         $location.path("/piscines");
                     };
-
-});
-
+ });    

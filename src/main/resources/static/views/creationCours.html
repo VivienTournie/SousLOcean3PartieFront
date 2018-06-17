@@ -9,8 +9,53 @@ and open the template in the editor.
         <title>Creation d'un cours</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
     </head>
-    <body>
+    <body ng-app="app">
         <div>Création d'un cours</div>
+        <br/>
+        <div>
+            <table>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Nom</th>
+                </tr>
+                
+                <tr ng-repeat="p in piscine">
+                    <td>{{p.id}}</td>
+                    <td>{{p.nom}}</td>
+                </tr>
+
+            </table>
+        </div>
+        <div>
+            <label for="name">Nom du cours :</label>
+            <input  ng-model="nomCours">
+            
+            <label for="niveau">Niveau :</label>
+            <input  ng-model="niveauCible">
+        </div>
+        <div>
+            <label for="date">Date début :</label>
+            <input  ng-model="dateDebut"  placeholder="dd/MM/yy HH:mm">
+            <label for="duree">Durée :</label>
+            <input  ng-model="duree">
+        </div>
+        <div>
+             <label for="enseignant">Identifiant Enseignant :</label>
+            <input  ng-model="enseignant">
+             <label for="piscine">Identifiant piscine :</label>
+            <input  ng-model="id">
+        </div>
+        <div>
+            <button ng-click="creation()">Créer cours</button>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/piscinesController.js"></script>
+        <script src="../js/creationCoursController.js"></script>
     </body>
 </html>
