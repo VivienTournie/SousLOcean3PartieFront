@@ -43,6 +43,10 @@ app.config(function($routeProvider){
             templateUrl: 'views/gestionProfil.html',
             controller: 'gestionProfilController'
         })
+        .when('/creationCours',{
+            templateUrl: 'views/creationCours.html',
+            controller: 'creationCoursController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );
