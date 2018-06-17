@@ -12,12 +12,35 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../css/css.css">
     </head>
     <body ng-app = "app">
-        <div>{{content}}</div>
+        <br/>
+        <div>Liste des cotisations</div>
+        <br/>
+        <div>
+            <table>
+                <tr>
+                    <th>idPaiement</th>
+                    <th>Adresse</th>
+                    <th>Montant</th>
+                    <th>Date</th>
+                    <th>Référence Bancaire</th>
+                    <th>Membre</th>
+                </tr>
+                
+                <tr ng-repeat="p in content">
+                    <td>{{p.idPaiement}}</td>
+                    <td>{{p.adresse}}</td>
+                    <td>{{p.montant}}</td>
+                    <td>{{p.date}}</td> 
+                    <td>{{p.refBancaire}}</td>                     
+                    <td>{{p.membre}}</td> 
+                </tr>
+
+            </table>
+        </div>
         <br/>
         <form accept-charset="UTF-8" role="form">
                     <fieldset>
-                         IBAN : <input  ng-model="IBAN" name="IBAN" type="text">  <br/><br/>
-                         Somme : <input  ng-model="somme" name="somme" type="float">  <br/><br/>
+                         idMembre : <input  ng-model="id"  type="number">  <br/><br/>
                         <input  type="submit" value="Payer" ng-click="validerCotisation()">
                     </fieldset>
         </form>

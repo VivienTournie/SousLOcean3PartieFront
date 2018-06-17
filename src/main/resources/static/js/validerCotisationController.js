@@ -8,27 +8,24 @@ if ($cookies.get("type")!="Secretaire"){
         $window.alert("Vous n'avez pas les droits :(");
         $location.path("/deconnexion");
  }
-                    
-$scope.validerCotisation = function ()
-                    {
-                        $http.get("http://localhost:8080/api/membre/listePaiement")
+                         $http.get("http://localhost:8080/api/membre/listePaiement")
                             .then(function(response) {
                                 $scope.content = response.data;
-                                $scope.statuscode = response.status;
-                                $scope.statustext = response.statusText; 
-                            });
+                            });                   
+$scope.validerCotisation = function ()
+                    {
+
                         
-                        console.log(dataSend);
                         
-                        $http.put("http://localhost:8080/api/valider",dataSend)
-                        .then(function(dataSend) {
-                            $scope.PostDataResponse = dataSend;
+                        
+                        $http.put("http://localhost:8080/api/membre/valider/"+$scope.id)
+                        .then(function(data) {
+                            console.log(data);
                         },
-                        function (dataSend) {
-                            $scope.ResponseDetails = "Data: " + dataSend;
+                        function () {
+                                $location.path("/listeMembres");
                         });
                         
-                        $location.path("/piscines");
                     };
 
 });
