@@ -47,7 +47,6 @@ app.config(function($routeProvider){
             templateUrl: 'views/creationCours.html',
             controller: 'creationCoursController'
         })
-<<<<<<< HEAD
         .when('/payerCotisation',{
             templateUrl: 'views/payerCotisation.html',
             controller: 'payerCotisationController'
@@ -55,11 +54,10 @@ app.config(function($routeProvider){
         .when('/validerCotisation',{
             templateUrl: 'views/validerCotisation.html',
             controller: 'validerCotisationController'
-=======
+        })
         .when('/participerCours',{
             templateUrl: 'views/participerCours.html',
             controller: 'participerCoursController'
->>>>>>> 5f414ca1354286af38c27a031dc6fb35499b122a
         })
         .otherwise(
             { redirectTo: '/'}

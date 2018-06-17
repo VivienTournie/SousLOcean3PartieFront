@@ -21,10 +21,10 @@ if ($cookies.get("type")!="Enseignant"){
                         console.log("création cours");
                         var dataSend ={
                             nomCours : $scope.nomCours,
-                            niveauCible : $scope.niveauCible,
-                            dateDebut : $scope.dateDebut,
-                            duree : $scope.duree,
-                            enseignant : $scope.enseignant,
+                            niveauCible : $scope.niveauCible+"",
+                            dateDebut : $scope.dateDebut+"",
+                            duree : $scope.duree+"",
+                            enseignant : $cookies.get("id")+"",
                             piscine : $scope.id,
                         };
                         console.log(dataSend);
