@@ -5,7 +5,7 @@
  */
 app.controller("payerCotisationController", function($scope, $http, $cookies, $location) {
 if ($cookies.get("id")===undefined){
-     $location.path("/deconnexion");
+     $location.path("/connexion");
  }
 
  $scope.payerCotisation = function ()
@@ -13,12 +13,11 @@ if ($cookies.get("id")===undefined){
                         console.log("Cotisation");
                         var dataSend ={
                             IBAN : $scope.IBAN,
-                            somme : $scope.somme,
-                            id : $cookies.get("id")
+                            somme : $scope.somme+""
                         } ;
                         
                         console.log(dataSend);
-                        $http.put("http://localhost:8080/api/paiement",dataSend)
+                        $http.put("http://localhost:8080/api/membre/paiement/"+ $cookies.get("id"),dataSend)
                         .then(function(dataSend) {
                             $scope.PostDataResponse = dataSend;
                         },
