@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Payer cotisation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
+    </head>
+    <body ng-app = "app">
+        <div>Payez votre cotisation :</div>
+        <br/>
+        <form accept-charset="UTF-8" role="form">
+                    <fieldset>
+                         IBAN : <input  ng-model="IBAN" name="IBAN" type="text">  <br/><br/>
+                         Somme : <input  ng-model="somme" name="somme" type="float">  <br/><br/>
+                        <input  type="submit" value="Payer" ng-click="validerCotisation()">
+                    </fieldset>
+        </form>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/piscinesController.js"></script>
+        <script src="../js/payerCotisationController.js"></script>
+        <script src="../js/validerCotisationController.js"></script>
+    </body>
+</html>

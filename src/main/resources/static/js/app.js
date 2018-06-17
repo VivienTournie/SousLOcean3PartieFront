@@ -47,6 +47,14 @@ app.config(function($routeProvider){
             templateUrl: 'views/creationCours.html',
             controller: 'creationCoursController'
         })
+        .when('/payerCotisation',{
+            templateUrl: 'views/payerCotisation.html',
+            controller: 'payerCotisationController'
+        })
+        .when('/validerCotisation',{
+            templateUrl: 'views/validerCotisation.html',
+            controller: 'validerCotisationController'
+        })
         .otherwise(
             { redirectTo: '/'}
         );
