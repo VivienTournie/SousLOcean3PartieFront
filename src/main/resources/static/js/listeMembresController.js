@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller("listeMembresController", function($scope, $http,$window,$cookies) {
+app.controller("listeMembresController", function($scope, $http,$window,$cookies,$location) {
     
 if ($cookies.get("type")!="Secretaire"){
       $window.alert("Vous n'avez pas les droits :(")
