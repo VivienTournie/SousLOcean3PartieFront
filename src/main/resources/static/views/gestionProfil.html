@@ -12,25 +12,31 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../css/css.css">
     </head>
     <body ng-app="app">
-        <div>Gestion du profil membre {{membre}}</div>
-        <!--<div>
+        <div>Gestion du profil membre</div>
+         <div>
             <table>
-
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Mail</th>
+                    <th>Pays</th>
+                    <th>Ville</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                </tr>
                 
-                <tr ng-repeat="m in membre">
-                    <td>{{m.nom}}</td>
-                    <td>{{m.prenom}}</td>
-                    <td>{{m.adresseMail}}</td>
-                    <td>{{m.niveauExpertise}}</td>
-                    <td>{{m.numLicence}}</td>
-                    <td>{{m.dateDebutCertificat}}</td>
-                    <td>{{m.apaye}}</td>
-                    <td>{{m.adresse.ville}}</td>
-                    <td>{{m.adresse.pays}}</td>
+                <tr>
+                    <td>{{membre.nom}}</td>
+                    <td>{{membre.prenom}}</td>
+                    <td>{{membre.adresseMail}}</td>
+                    <td>{{membre.adresse.pays}}</td>
+                    <td>{{membre.adresse.ville}}</td>
+                    <td>{{membre.login}}</td>
+                    <td>{{membre.password}}</td>
                 </tr>
 
             </table>
-        </div>-->
+        <br/>
         <div>
             <label for="name">Nom :</label>
             <input ng-model="nom" value="{{membre.nom}}">
