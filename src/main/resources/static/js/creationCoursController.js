@@ -15,6 +15,29 @@ if ($cookies.get("type")!="Enseignant"){
         $scope.statuscode = response.status;
         $scope.statustext = response.statusText; 
     });
+    
+     $scope.creation = function ()
+                    {
+                        console.log("création cours");
+                        var dataSend ={
+                            nomCours : $scope.nomCours,
+                            niveauCible : $scope.niveauCible,
+                            dateDebut : $scope.dateDebut,
+                            duree : $scope.duree,
+                            enseignant : $scope.enseignant,
+                            piscine : $scope.id,
+                        };
+                        console.log(dataSend);
+                        $http.post("http://localhost:8081/api/cours/creation",dataSend)
+                        .then(function(dataSend) {
+                            $scope.PostDataResponse = dataSend;
+                        },
+                        function (dataSend) {
+                            $scope.ResponseDetails = "Data: " + dataSend;
+                        });
+                        
+                        $location.path("/piscines");
+                    };
 
 });
 
